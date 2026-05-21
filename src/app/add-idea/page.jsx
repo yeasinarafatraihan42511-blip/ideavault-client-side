@@ -1,7 +1,7 @@
 "use client";
 
-import { Card, Form, Input, Select, Button, CardBody, TextArea, axios} from "@heroui/react";
-import axios from "axios";
+import { Card, Form, Input, Select, Button, CardBody, TextArea,} from "@heroui/react";
+
 
 
 
@@ -15,40 +15,57 @@ const categories = [
 ];
 
 const AddIdea = () => {
-
-    const handleSubmit = async (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
-
-        const form = e.target;
-
-        const ideaData = {
-            title: form.title.value,
-            shortDescription: form.shortDescription.value,
-            detailedDescription: form.detailedDescription.value,
-            category: form.category.value,
-            tags: form.tags.value,
-            image: form.image.value,
-            budget: form.budget.value,
-            audience: form.audience.value,
-            problem: form.problem.value,
-            solution: form.solution.value,
-        };
-
+        const formData = new FormData(e.currentTarget);
+        const ideaData = Object.fromEntries(formData.entries());
         console.log(ideaData);
-        fetch('http://localhost:5000/ideas', {
+
+        const res = await fetch('http://localhost:5000/ideas', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(ideaData)
-        })
-        const res = await axios.post(
-            "http://localhost:5000/ideas",
-            ideaData
-        );
+        });
+        const data = await res.json();
+        console.log(data);
 
-        console.log(res.data);
-    };
+    }
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+
+    //     const form = e.target;
+
+    //     const ideaData = {
+    //         title: form.title.value,
+    //         shortDescription: form.shortDescription.value,
+    //         detailedDescription: form.detailedDescription.value,
+    //         category: form.category.value,
+    //         tags: form.tags.value,
+    //         image: form.image.value,
+    //         budget: form.budget.value,
+    //         audience: form.audience.value,
+    //         problem: form.problem.value,
+    //         solution: form.solution.value,
+    //     };
+
+    //     console.log(ideaData);
+    //     fetch('http://localhost:5000/ideas', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify(ideaData)
+    //     })
+    //     const res = await axios.post(
+    //         "http://localhost:5000/ideas",
+    //         ideaData
+    //     );
+
+    //     console.log(res.data);
+    // };
 
     return (
         <div className="max-w-6xl mx-auto px-5 py-16">
@@ -68,7 +85,7 @@ const AddIdea = () => {
                 </div>
 
                 <Form
-                    onSubmit={handleSubmit}
+                    onSubmit={onSubmit}
                     className="grid md:grid-cols-2 gap-6"
                 >
 
