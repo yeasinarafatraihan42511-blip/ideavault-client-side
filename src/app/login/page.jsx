@@ -13,33 +13,33 @@ import {
   TextField,
 } from "@heroui/react";
 
-export default function RegisterPage() {
+export default function LoginPage() {
   const router = useRouter();
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
     const form = e.target;
-    const name = form.name.value;
-    const image = form.image.value;
     const email = form.email.value;
     const password = form.password.value;
 
-    const { error } = await authClient.signUp.email({
-      name,
-      image,
+    const { error } = await authClient.signIn.email({
       email,
       password,
-      callbackURL: "/login",
+      callbackURL: "/",
     });
 
     if (error) {
-      toast.error("Registration failed");
+      toast.error("Invalid email or password");
     } else {
-      toast.success("Registration successful");
+      toast.success("Login successful");
       form.reset(); 
-      router.push("/login");
+      router.push("/");
     }
+  };
+
+  const onGoogleSignIn = async () => {
+    await authClient.signIn.social({ provider: "google" });
   };
 
   return (
@@ -47,20 +47,10 @@ export default function RegisterPage() {
       <Card className="w-[380px] p-8 shadow-lg rounded-xl">
 
         <h1 className="text-2xl font-bold text-center mb-6">
-          Create Account 🚀
+          Login to Idea Vault
         </h1>
 
-        <Form className="flex flex-col gap-4" onSubmit={onSubmit}>
-          <TextField isRequired name="name">
-            <Label>Name</Label>
-            <Input placeholder="Your name" />
-          </TextField>
-
-          <TextField isRequired name="image">
-            <Label>Photo URL</Label>
-            <Input placeholder="https://image-url.com" />
-          </TextField>
-
+        <Form autoComplete="off" className="flex flex-col gap-4" onSubmit={onSubmit}>
           <TextField isRequired name="email" type="email">
             <Label>Email</Label>
             <Input placeholder="john@example.com" />
@@ -70,16 +60,34 @@ export default function RegisterPage() {
             <Label>Password</Label>
             <Input placeholder="Enter password" />
           </TextField>
+          <p className="text-sm text-muted-foreground">
+            Forgot your password?{" "}
+            <Link href="/forgot-password" className="font-medium underline">
+              Reset it
+            </Link>
+          </p>
 
           <Button type="submit" className="bg-blue-600 text-white">
-            Register
+            Login
           </Button>
         </Form>
 
+        {/* Divider */}
+        <div className="text-center my-4 text-gray-400 text-sm">OR</div>
+
+        <Button
+          onClick={onGoogleSignIn}
+          variant="bordered"
+          className="w-full btn bg-blue-600 text-white hover:bg-blue-700" 
+        >
+          Continue with Google
+        </Button>
+
+        {/* Link */}
         <p className="text-sm text-center mt-4">
-          Already have an account?{" "}
-          <Link href="/login" className="underline font-medium">
-            Login
+          Don’t have an account?{" "}
+          <Link href="/register" className="font-medium underline">
+            Register
           </Link>
         </p>
       </Card>
