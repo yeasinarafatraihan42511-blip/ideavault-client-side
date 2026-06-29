@@ -212,6 +212,7 @@ import {
   ListBox,
 } from "@heroui/react";
 
+
 const AddIdea = () => {
 
   const onSubmit = async (e) => {
@@ -223,6 +224,10 @@ const AddIdea = () => {
     const ideaData = Object.fromEntries(
       formData.entries()
     );
+
+     
+
+
 
     console.log(ideaData);
 

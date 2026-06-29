@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Banner from "@/components/Banner";
+import TrendingIdeas from "@/components/TrendingIdeas";
 
 export default function Home() {
   return (
     <div >
        <Banner/>
+       <TrendingIdeas/>
     </div>
   );
 }
