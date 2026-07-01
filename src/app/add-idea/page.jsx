@@ -216,7 +216,10 @@ import {
 const AddIdea = () => {
 
   const onSubmit = async (e) => {
-
+    const userName = "John Doe"; // Replace with actual user name
+    const userEmail = "john.doe@example.com"; // Replace with actual user email
+    const userPhoto = "https://example.com/photo.jpg"; // Replace with actual user photo URL
+    const createdAt = new Date();
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
