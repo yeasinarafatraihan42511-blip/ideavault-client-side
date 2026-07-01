@@ -21,7 +21,7 @@
 //         const ideaData = Object.fromEntries(formData.entries());
 //         console.log(ideaData);
 
-//         const res = await fetch('http://localhost:5000/ideas', {
+//         const res = await fetch('https://idea-vault-server-side-ten.vercel.app/ideas', {
 //             method: 'POST',
 //             headers: {
 //                 'Content-Type': 'application/json',
@@ -52,7 +52,7 @@
 //     //     };
 
 //     //     console.log(ideaData);
-//     //     fetch('http://localhost:5000/ideas', {
+//     //     fetch('https://idea-vault-server-side-ten.vercel.app/ideas', {
 //     //         method: 'POST',
 //     //         headers: {
 //     //             'Content-Type': 'application/json',
@@ -60,7 +60,7 @@
 //     //         body: JSON.stringify(ideaData)
 //     //     })
 //     //     const res = await axios.post(
-//     //         "http://localhost:5000/ideas",
+//     //         "https://idea-vault-server-side-ten.vercel.app/ideas",
 //     //         ideaData
 //     //     );
 
@@ -225,7 +225,7 @@ const AddIdea = () => {
       formData.entries()
     );
 
-     
+
 
 
 
@@ -234,7 +234,7 @@ const AddIdea = () => {
     try {
 
       const res = await fetch(
-        "http://localhost:5000/ideas",
+        "https://idea-vault-server-side-ten.vercel.app/ideas",
         {
           method: "POST",
           headers: {
@@ -310,53 +310,53 @@ const AddIdea = () => {
             <option value="Finance">Finance</option>
             <option value="Business">Business</option>
           </Select> */}
-              {/* Category - Updated Select Component */}
-              <div>
-                <Select
-                  name="category"
-                  isRequired
-                  className="w-full"
-                  placeholder="Select category"
-                >
-                  <Label>Category</Label>
-                  <Select.Trigger className="rounded-2xl">
-                    <Select.Value />
-                    <Select.Indicator />
-                  </Select.Trigger>
-                  <Select.Popover>
-                    <ListBox>
-                      <ListBox.Item id="Beach" textValue="Tech">
-                        Tech
-                        <ListBox.ItemIndicator />
-                      </ListBox.Item>
-                      <ListBox.Item id="Mountain" textValue="Health">
-                        Health
-                        <ListBox.ItemIndicator />
-                      </ListBox.Item>
-                      <ListBox.Item id="City" textValue="AI">
-                        AI
-                        <ListBox.ItemIndicator />
-                      </ListBox.Item>
-                      <ListBox.Item id="Adventure" textValue="Education">
-                        Education
-                        <ListBox.ItemIndicator />
-                      </ListBox.Item>
-                      <ListBox.Item id="Family" textValue="Finance">
-                        Finance
-                        <ListBox.ItemIndicator />
-                      </ListBox.Item>
-                      <ListBox.Item id="Cultural" textValue="Business">
-                        Business
-                        <ListBox.ItemIndicator />
-                      </ListBox.Item>
-                      <ListBox.Item id="Luxury" textValue="Other">
-                        Other
-                        <ListBox.ItemIndicator />
-                      </ListBox.Item>
-                    </ListBox>
-                  </Select.Popover>
-                </Select>
-              </div>
+          {/* Category - Updated Select Component */}
+          <div>
+            <Select
+              name="category"
+              isRequired
+              className="w-full"
+              placeholder="Select category"
+            >
+              <Label>Category</Label>
+              <Select.Trigger className="rounded-2xl">
+                <Select.Value />
+                <Select.Indicator />
+              </Select.Trigger>
+              <Select.Popover>
+                <ListBox>
+                  <ListBox.Item id="Beach" textValue="Tech">
+                    Tech
+                    <ListBox.ItemIndicator />
+                  </ListBox.Item>
+                  <ListBox.Item id="Mountain" textValue="Health">
+                    Health
+                    <ListBox.ItemIndicator />
+                  </ListBox.Item>
+                  <ListBox.Item id="City" textValue="AI">
+                    AI
+                    <ListBox.ItemIndicator />
+                  </ListBox.Item>
+                  <ListBox.Item id="Adventure" textValue="Education">
+                    Education
+                    <ListBox.ItemIndicator />
+                  </ListBox.Item>
+                  <ListBox.Item id="Family" textValue="Finance">
+                    Finance
+                    <ListBox.ItemIndicator />
+                  </ListBox.Item>
+                  <ListBox.Item id="Cultural" textValue="Business">
+                    Business
+                    <ListBox.ItemIndicator />
+                  </ListBox.Item>
+                  <ListBox.Item id="Luxury" textValue="Other">
+                    Other
+                    <ListBox.ItemIndicator />
+                  </ListBox.Item>
+                </ListBox>
+              </Select.Popover>
+            </Select>
+          </div>
 
           {/* short description */}
 

@@ -6,7 +6,7 @@ import EditDetails from "@/components/EditDetails";
 const DetailsPage = async ({ params }) => {
     const { id } = await params
 
-    const res = await fetch(`http://localhost:5000/ideas/${id}`, {
+    const res = await fetch(`https://idea-vault-server-side-ten.vercel.app/ideas/${id}`, {
         cache: 'no-store'
     });
     const idea = await res.json();

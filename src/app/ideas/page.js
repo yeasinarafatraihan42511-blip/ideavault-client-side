@@ -3,7 +3,7 @@
 
 
 // const ideaPage = async () => {
-//     const res = await fetch('http://localhost:5000/ideas');
+//     const res = await fetch('https://idea-vault-server-side-ten.vercel.app/ideas');
 //     const ideas = await res.json();
 //     console.log(ideas);
 //     return (
@@ -25,7 +25,7 @@
 // import IdeaCard from "@/components/IdeaCard";
 
 // const IdeaPage = async () => {
-//   const res = await fetch("http://localhost:5000/ideas", {
+//   const res = await fetch("https://idea-vault-server-side-ten.vercel.app/ideas", {
 //     cache: "no-store",
 //   });
 
@@ -76,7 +76,7 @@ export default function IdeaPage() {
   useEffect(() => {
     const loadIdeas = async () => {
       try {
-        const res = await fetch("http://localhost:5000/ideas", {
+        const res = await fetch("https://idea-vault-server-side-ten.vercel.app/ideas", {
           cache: "no-store",
         });
 

@@ -22,7 +22,7 @@
 //         setLoading(true);
 
 //         const res = await fetch(
-//           `http://localhost:5000/ideas?search=${search}&category=${category}&sort=${sort}`
+//           `https://idea-vault-server-side-ten.vercel.app/ideas?search=${search}&category=${category}&sort=${sort}`
 //         );
 
 //         const data = await res.json();
