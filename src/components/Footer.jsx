@@ -56,86 +56,86 @@
 // export default Footer;
 import Link from "next/link";
 import {
-FaGithub,
-FaLinkedin,
-FaXTwitter
+  FaGithub,
+  FaLinkedin,
+  FaXTwitter
 } from "react-icons/fa6";
 
 const Footer = () => {
   return (
 
-<footer className="bg-black text-white mt-20 border-t border-gray-800">
+    <footer className="bg-black/70 text-white mt-20 border-t border-gray-800">
 
-<div className="max-w-7xl mx-auto px-5 py-14">
+      <div className="max-w-7xl mx-auto px-5 py-14">
 
-<div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-3 gap-10">
 
-<div>
+          <div>
 
-<h2 className="text-2xl font-bold">
-IdeaVault
-</h2>
+            <h2 className="text-2xl font-bold">
+              IdeaVault
+            </h2>
 
-<p className="mt-4 text-gray-400">
-Discover startup ideas, validate concepts,
-and connect with innovators.
-</p>
+            <p className="mt-4 text-gray-400">
+              Discover startup ideas, validate concepts,
+              and connect with innovators.
+            </p>
 
-</div>
+          </div>
 
-<div>
+          <div>
 
-<h3 className="font-semibold text-lg mb-4">
-Quick Links
-</h3>
+            <h3 className="font-semibold text-lg mb-4">
+              Quick Links
+            </h3>
 
-<div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3">
 
-<Link href="/">
-Home
-</Link>
+              <Link href="/">
+                Home
+              </Link>
 
-<Link href="/ideas">
-Ideas
-</Link>
+              <Link href="/ideas">
+                Ideas
+              </Link>
 
-<Link href="/add-idea">
-Add Idea
-</Link>
+              <Link href="/add-idea">
+                Add Idea
+              </Link>
 
-</div>
+            </div>
 
-</div>
+          </div>
 
-<div>
+          <div>
 
-<h3 className="font-semibold text-lg mb-4">
-Connect
-</h3>
+            <h3 className="font-semibold text-lg mb-4">
+              Connect
+            </h3>
 
-<div className="flex gap-5 text-2xl">
+            <div className="flex gap-5 text-2xl">
 
-<FaGithub/>
+              <FaGithub />
 
-<FaLinkedin/>
+              <FaLinkedin />
 
-<FaXTwitter/>
+              <FaXTwitter />
 
-</div>
+            </div>
 
-</div>
+          </div>
 
-</div>
+        </div>
 
-<div className="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
+        <div className="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
 
-© 2026 IdeaVault | All Rights Reserved
+          © 2026 IdeaVault | All Rights Reserved
 
-</div>
+        </div>
 
-</div>
+      </div>
 
-</footer>
+    </footer>
 
   );
 };

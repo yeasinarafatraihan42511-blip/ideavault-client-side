@@ -11,3 +11,15 @@ html.dark {
 body {
   transition: all 0.3s ease;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  transition: .3s;
+}
+
+.dark body{
+  background:#020617;
+  color:white;
+}
